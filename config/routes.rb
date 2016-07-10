@@ -8,4 +8,8 @@ Rails.application.routes.draw do
   get 'admin' => 'pages#admin'
 
   get 'contact' => 'pages#contact'
+
+  get 'signup' => 'users#new'
+
+  resources :users
 end
