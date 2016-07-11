@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class PagesControllerTest < ActionDispatch::IntegrationTest
+class PagesControllerTest < ActionController::TestCase
   test "should get home" do
     get :home
     assert_response :success
