@@ -19,5 +19,7 @@ Rails.application.routes.draw do
 
   delete 'logout' => 'sessions#destroy'
 
+  get 'edit' => 'users#edit'
+
   resources :users
 end
