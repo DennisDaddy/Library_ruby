@@ -22,4 +22,6 @@ Rails.application.routes.draw do
   get 'edit' => 'users#edit'
 
   resources :users
+
+  resources :account_activations, only: [:edit]
 end
