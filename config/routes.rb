@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
  
 
+  get 'books/new'
+
   root 'pages#home'
 
   get  'about' => 'pages#about'
