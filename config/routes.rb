@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
  
 
-  get 'books/new'
+  
 
   root 'pages#home'
 
@@ -21,7 +21,9 @@ Rails.application.routes.draw do
 
   get 'edit' => 'users#edit'
 
-  resources :users
+   resources :users
+   resources :books
+
 
   resources :account_activation, only: [:edit]
   resources :password_resets, only: [:new, :create, :edit, :update]
