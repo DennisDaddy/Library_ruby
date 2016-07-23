@@ -9,7 +9,7 @@ You are free to contribute to this system and make any changes you want, you can
 
 * A user can borrow books
 
-*A user can create account 
+* A user can create account 
 
 * A user with account can login to view or borrow books
 
