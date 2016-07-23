@@ -1,9 +1,9 @@
-# README
+# CLASSIC LIBRARY
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the open source code for  school library system developed in ruby.
+You are free to contribute to this source codes,you can clone or fork the source code and work on it as you wish.
 
-Things you may want to cover:
+##THINGS YOU CAN DO WITH THE SYSTEM
 
 * Ruby version
 
