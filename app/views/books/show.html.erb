@@ -6,22 +6,37 @@
     <tr>
         <th>Book Title</th>
         <td><%= @book.book_title %></td>
-     </tr>
+        <td><%= link_to "Edit", "#" %> </td>
+        <td><%= link_to "Delete", "#" %> </td>
+    </tr>
+
       <tr>
         <th>Category</th>
         <td><%= @book.category %></td>
+        <td><%= link_to "Edit", "#" %> </td>
+        <td><%= link_to "Delete", "#" %> </td>
+
        </tr>
        <tr>
        <th>Author</th>
        <td><%= @book.author %></td>
+        <td><%= link_to "Edit", "#" %> </td>
+        <td><%= link_to "Delete", "#" %> </td>
+
+
        </tr>
        <tr>
         <th>ISBN</th>
         <td><%= @book.isbn %></td>
+        <td><%= link_to "Edit", "#" %> </td>
+        <td><%= link_to "Delete", "#" %> </td>
+
         </tr>
         <tr>
         <th>Status</th>
         <td><%= @book.status %></td>
+         <td><%= link_to "Edit", "#" %> </td>
+        <td><%= link_to "Delete", "#" %> </td>
         </tr>
     </tr>
 </table>
