@@ -19,6 +19,9 @@ Rails.application.routes.draw do
 
   get 'edit' => 'users#edit'
 
+  get 'addbook' => 'books#new'
+  
+  resources :books
   resources :users
 
   resources :account_activation, only: [:edit]
