@@ -1,0 +1,13 @@
+<% provide(:title, 'All books') %>
+<%= link_to  "Add Book", addbook_path %>
+
+<h2>All Books</h2>
+<ul class="users">
+
+<% @books.each do |book| %>
+<li>
+
+<%= link_to book.book_title, book %>
+</li>
+<% end %>
+</ul>

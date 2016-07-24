@@ -1,0 +1,28 @@
+
+<%= link_to  "Add Book", addbook_path %>
+
+<table>
+
+    <tr>
+        <th>Book Title</th>
+        <td><%= @book.book_title %></td>
+     </tr>
+      <tr>
+        <th>Category</th>
+        <td><%= @book.category %></td>
+       </tr>
+       <tr>
+       <th>Author</th>
+       <td><%= @book.author %></td>
+       </tr>
+       <tr>
+        <th>ISBN</th>
+        <td><%= @book.isbn %></td>
+        </tr>
+        <tr>
+        <th>Status</th>
+        <td><%= @book.status %></td>
+        </tr>
+    </tr>
+</table>
+ 
