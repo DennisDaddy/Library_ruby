@@ -1,11 +1,14 @@
 class BooksController < ApplicationController
+ 
+  before_action :correct_user, only: [:edit, :update]
+
  def index
 
+  @books = Book.all
   end
 
   def new
-
-   @book = Book.new
+  @book = Book.new
   end
 
   def show
@@ -13,12 +16,19 @@ class BooksController < ApplicationController
   end
 
   def create
-    @book = Book.find(params[:book])
-    if @user.save
+    @book = Book.new(book_params)
+    if @book.save
+      flash[:success] ="Book added successfully!" 
       redirect_to @book
     else
       render 'new'
+   end
+end
 
-  end
+  private 
+
+  def book_params
+    params.require(:book).permit(:book_title, :category, :author, 
+                                :isbn, :status)
 end
 end

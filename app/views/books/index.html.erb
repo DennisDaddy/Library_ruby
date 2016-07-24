@@ -1,13 +1,13 @@
-<h2>Welcome to classic library find all the books you want</h2>
+<% provide(:title, 'All books') %>
 <%= link_to  "Add Book", addbook_path %>
 
-<table>
+<h2>All Books</h2>
+<ul class="users">
 
-    <tr>
-        <th>Book Title</th>
-        <th>Category</th>
-        <th>Author</th>
-        <th>ISBN</th>
-        <th>Status</th>
-    </tr>
-</table>
+<% @books.each do |book| %>
+<li>
+
+<%= link_to book.book_title, book %>
+</li>
+<% end %>
+</ul>
