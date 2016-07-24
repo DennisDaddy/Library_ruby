@@ -21,6 +21,9 @@ Rails.application.routes.draw do
 
   get 'edit' => 'users#edit'
 
+  get 'addbook' => 'books#new'
+
+
    resources :users
    resources :books
 
