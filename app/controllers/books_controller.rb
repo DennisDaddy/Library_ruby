@@ -1,6 +1,8 @@
 class BooksController < ApplicationController
  
   before_action :correct_user, only: [:edit, :update]
+  before_action :admin_user, only: :destroy
+
 
  def index
 
@@ -23,6 +25,13 @@ class BooksController < ApplicationController
     else
       render 'new'
    end
+
+    def destroy
+      Book.find(params[:id]).destroy
+      flash[:succes] = "Book deleted!"
+      redirect_to books_url
+
+    end
 end
 
   private 
@@ -31,4 +40,7 @@ end
     params.require(:book).permit(:book_title, :category, :author, 
                                 :isbn, :status)
 end
+  def admin_user
+    redirect_to(root_url) unless current_user.admin?
+  end
 end
