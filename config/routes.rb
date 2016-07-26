@@ -21,18 +21,13 @@ Rails.application.routes.draw do
 
   get 'edit' => 'users#edit'
 
+  get 'edit_book' => 'books#edit'
+
   get 'addbook' => 'books#new'
 
   
   resources :books
   resources :users
-
-
-
-   resources :users
-   resources :books
-
-
 
   resources :account_activation, only: [:edit]
   resources :password_resets, only: [:new, :create, :edit, :update]

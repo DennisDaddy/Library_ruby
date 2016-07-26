@@ -1,11 +1,11 @@
 class BooksController < ApplicationController
- 
+  before_action :logged_in_user, only: [:index, :edit, :update, :destroy] 
   before_action :correct_user, only: [:edit, :update]
   before_action :admin_user, only: :destroy
 
 
  def index
-
+   
   @books = Book.all
   end
 
@@ -26,6 +26,22 @@ class BooksController < ApplicationController
       render 'new'
    end
 
+    def edit
+      @book = Book.find(params[:id])
+      @user = User.find(params[:id])
+
+    end
+    def update
+      @book = Book.find(params[:id])
+      if @book.update_attributes(book_params)
+        flash[:success] = "Book updated"
+        redirect_to @book
+      else
+        render 'edit'
+      end
+    end
+
+   
     def destroy
       Book.find(params[:id]).destroy
       flash[:succes] = "Book deleted!"
@@ -34,7 +50,18 @@ class BooksController < ApplicationController
     end
 end
 
-  private 
+  private
+
+ def logged_in_user
+      unless logged_in?
+        flash[:danger] = "please login"
+        redirect_to login_url
+      end
+    end
+ def correct_user
+   @user = User.find(params[:id])
+   redirect_to(root_url) unless @user == current_user
+ end
 
   def book_params
     params.require(:book).permit(:book_title, :category, :author, 
