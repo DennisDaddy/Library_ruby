@@ -1,12 +1,18 @@
 <% provide(:title, 'All books') %>
+<% if current_user.admin?%>
 <%= link_to  "Add Book", addbook_path %>
+<% end %>
 
 <h2>All Books</h2>
 <ul class="users">
 
-<% @books.each do |book| %>
-<li>
-
-<%= link_to book.book_title, book %> |<%= link_to "Edit", edit_book_path %> | <%= link_to "Delete", "#" %>
-<% end %>
+    <% @books.each do |book| %>
+        <li>
+            <%= link_to book.book_title, book %>
+            <% if current_user.admin? %>
+                |<%= link_to "Edit",edit_book_path(book) %>
+            | <%= link_to "Delete", book, method: :delete, data: {confirm: "Are you sure you want to delete this book??"} %>
+    <% end %>
+        </li>
+    <% end %>
 </ul>

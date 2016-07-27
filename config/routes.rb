@@ -21,7 +21,6 @@ Rails.application.routes.draw do
 
   get 'edit' => 'users#edit'
 
-  get 'edit_book' => 'books#edit'
 
   get 'addbook' => 'books#new'
 

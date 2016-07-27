@@ -1,20 +1,20 @@
 <% provide(:title, 'Edit Book') %>
 <div class="row">
-<div class="col-md-6 col-md-offset-3">
-<h3>Edit Book</h3>
-<%= form_for(@book) do |f| %>
-<%= render 'shared/errors_book' %>
-<%= f.label :book_title %>
-<%= f.text_field :book_title, class: 'form-control' %>
-<%= f.label :author %>
-<%= f.text_field :author, class: 'form-control' %>
-<%= f.label :category %>
-<%= f.text_field :category, class: 'form-control' %>
-<%= f.label :isbn %>
-<%= f.text_field :isbn, class: 'form-control' %>
-<%= f.label :status %>
-<%= f.text_field :status, class: 'form-control' %>
-<%= f.submit "Save Changes" %>
-<% end %>
-</div>
+    <div class="col-md-6 col-md-offset-3">
+        <h3>Edit Book</h3>
+        <%= form_for(@book) do |f| %>
+            <%= render 'shared/errors_book' %>
+            <%= f.label :book_title %>
+            <%= f.text_field :book_title, class: 'form-control' %>
+            <%= f.label :author %>
+            <%= f.text_field :author, class: 'form-control' %>
+            <%= f.label :category %>
+            <%= f.text_field :category, class: 'form-control' %>
+            <%= f.label :isbn %>
+            <%= f.text_field :isbn, class: 'form-control' %>
+            <%= f.label :status %>
+            <%= f.text_field :status, class: 'form-control' %>
+            <%= f.submit "Save Changes" %>
+        <% end %>
+    </div>
 </div>
