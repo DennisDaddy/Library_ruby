@@ -28,7 +28,6 @@ class BooksController < ApplicationController
 
     def edit
       @book = Book.find(params[:id])
-      @user = User.find(params[:id])
 
     end
     def update
@@ -41,7 +40,13 @@ class BooksController < ApplicationController
       end
     end
 
-   
+    def logged_in_user
+      unless logged_in?
+        flash[:danger] = "please login"
+        redirect_to login_url
+      end
+    end
+
     def destroy
       Book.find(params[:id]).destroy
       flash[:succes] = "Book deleted!"
@@ -52,22 +57,22 @@ end
 
   private
 
- def logged_in_user
-      unless logged_in?
-        flash[:danger] = "please login"
-        redirect_to login_url
-      end
-    end
- def correct_user
-   @user = User.find(params[:id])
-   redirect_to(root_url) unless @user == current_user
- end
-
   def book_params
-    params.require(:book).permit(:book_title, :category, :author, 
-                                :isbn, :status)
+    params.require(:book).permit(:book_title, :category, :author, :isbn, :status)
 end
   def admin_user
     redirect_to(root_url) unless current_user.admin?
+  end
+
+  def logged_in_user
+    unless logged_in?
+      flash[:danger] = "please log in."
+      redirect_to login_url
+    end
+  end
+
+  def correct_user
+    @user = User.find(params[:id])
+    redirect_to(root_url) unless @user == current_user
   end
 end
