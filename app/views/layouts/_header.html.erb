@@ -1,9 +1,8 @@
 <header>
   
-  <div class="title-bar" data-responsive-toggle="example-menu" data-hide-for="medium">
-  <button class="menu-icon" type="button" data-toggle></button>
-  <div class="title-bar-title">Menu</div>
-</div>
+  
+  
+  
 
 <div class="top-bar" id="example-menu">
   <div class="top-bar-left">
@@ -17,7 +16,7 @@
          <li><%= link_to "books", books_path %></li>
      <li><%= link_to "Profile", current_user %></li>
      <li><%= link_to "Settings", edit_user_path(current_user) %></li>
-     <%= link_to "Log out", logout_path, method: "delete" %>
+     <li><%= link_to "Log out", logout_path, method: "delete" %></li>
      <% else %>
      <li><%= link_to "Log in", login_path %></li>
      <% end %>
